@@ -2,7 +2,7 @@
   "name": "node",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "",
+  "author": "luke",
   "private": true,
   "scripts": {
     "dev": "HOST=0.0.0.0 PORT=8080 nuxt",
