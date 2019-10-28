@@ -4,11 +4,18 @@ export const state = () => ({
   list: todoList
 })
 
+export const getters = {
+  addDpAttr: (state) => {
+    state.list.forEach(x => x.show = 'block');
+    return state.list;
+  }
+}
+
 export const mutations = {
   add (state, text) {
     state.list.push({
       text,
-      done: false
+      isDone: false
     })
   },
 
@@ -17,6 +24,14 @@ export const mutations = {
   },
 
   toggle (state, todo) {
-    todo.done = !todo.done
+    todo.isDone = !todo.isDone
+  },
+
+  toggleEditMode(state, payload) {
+    payload.show = (payload.show !== 'none') ? 'none' : 'block';
+  },
+  
+  update(state, todo) {
+    console.log(todo);
   }
 }
